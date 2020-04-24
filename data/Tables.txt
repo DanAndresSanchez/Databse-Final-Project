@@ -1,0 +1,79 @@
+use final_project;
+CREATE TABLE `supplier` (
+  `Sname` varchar(30) NOT NULL,
+  `scity` varchar(20) DEFAULT NULL,
+  `szip` char(5) DEFAULT NULL,
+  PRIMARY KEY (`Sname`)
+);
+
+CREATE TABLE `customer` (
+  `customerID` int auto_increment NOT NULL,
+  `Fname` varchar(20) DEFAULT NULL,
+  `Lname` varchar(30) DEFAULT NULL,
+  `caddress` varchar(100) DEFAULT NULL,
+  `ccity` varchar(20) DEFAULT NULL,
+  `cstate` char(2) DEFAULT NULL,
+  `czip` char(5) DEFAULT NULL,
+  PRIMARY KEY (`customerID`)
+);
+
+CREATE TABLE `contains` (
+  `orderID` int auto_increment NOT NULL,
+  `UPC` int(5) NOT NULL,
+  `quantity` tinyint NOT NULL,
+  PRIMARY KEY (`orderID`,`UPC`),
+  KEY `UPC` (`UPC`),
+  CONSTRAINT `contains_ibfk_1` FOREIGN KEY (`orderID`) REFERENCES `orders` (`orderID`),
+  CONSTRAINT `contains_ibfk_2` FOREIGN KEY (`UPC`) REFERENCES `product` (`UPC`)
+);
+
+CREATE TABLE `orders` (
+  `orderID` int NOT NULL,
+  `orderdate` date DEFAULT NULL,
+  `shipdate` date DEFAULT NULL,
+  `payment_type` varchar(10) DEFAULT NULL,
+  `CCN` char(16) DEFAULT NULL,
+  `customerID` int DEFAULT NULL,
+  PRIMARY KEY (`orderID`),
+  KEY `customerID` (`customerID`),
+  CONSTRAINT `orders_ibfk_1` FOREIGN KEY (`customerID`) REFERENCES `customer` (`customerID`)
+);
+
+CREATE TABLE `product` (
+  `UPC` int(5) auto_increment NOT NULL,
+  `Pname` varchar(40) DEFAULT NULL,
+  `price` decimal(10,2) DEFAULT NULL,
+  `Sname` varchar(30) DEFAULT NULL,
+  `amount` int DEFAULT NULL,
+  `reorderlevel` int DEFAULT NULL,
+  PRIMARY KEY (`UPC`),
+  KEY `Sname` (`Sname`),
+  CONSTRAINT `product_ibfk_1` FOREIGN KEY (`Sname`) REFERENCES `supplier` (`Sname`)
+);
+
+CREATE TABLE `prod_category` (
+  `UPC` int(5) NOT NULL,
+  `category` varchar(15) NOT NULL,
+  PRIMARY KEY (`UPC`,`category`),
+  CONSTRAINT `prod_category_ibfk_1` FOREIGN KEY (`UPC`) REFERENCES `product` (`UPC`)
+);
+
+CREATE TABLE `rated` (
+  `customerID` int NOT NULL,
+  `UPC` int(5) NOT NULL,
+  `rating` tinyint NOT NULL,
+  `rateingdate` date NOT NULL,
+  PRIMARY KEY (`customerID`),
+  KEY `fk2_idx` (`UPC`),
+  CONSTRAINT `fk1` FOREIGN KEY (`customerID`) REFERENCES `customer` (`customerID`),
+  CONSTRAINT `fk2` FOREIGN KEY (`UPC`) REFERENCES `product` (`UPC`)
+);
+
+CREATE TABLE `wishes` (
+  `customerID` int  NOT NULL,
+  `UPC` int(5) NULL,
+  PRIMARY KEY (`customerID`,`UPC`),
+  KEY `UPC` (`UPC`),
+  CONSTRAINT `wishes_ibfk_1` FOREIGN KEY (`customerID`) REFERENCES `customer` (`customerID`),
+  CONSTRAINT `wishes_ibfk_2` FOREIGN KEY (`UPC`) REFERENCES `product` (`UPC`)
+);
