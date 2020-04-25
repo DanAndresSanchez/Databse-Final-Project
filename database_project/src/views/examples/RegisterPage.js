@@ -1,110 +1,149 @@
-/*!
+import React, { Component} from 'react';
+import Navigation from "../../components/Navigation";
+import {Container, Input , FormGroup, CardBody, Button, Label, Row, Col, Card, CardTitle} from "reactstrap";
+import {Redirect} from "react-router-dom";
 
-=========================================================
-* Paper Kit React - v1.0.0
-=========================================================
+class RegisterPage extends Component {
+  constructor(props) {
+    super(props);
+    this.state ={
+      Fname: '',
+      Lname: '',
+      caddress: '',
+      ccity: '',
+      cstate: '',
+      czip: '',
+      isRegistered: false
+    }
+  }
 
-* Product Page: https://www.creative-tim.com/product/paper-kit-react
+  onFNameChange = (event) =>{
+    this.setState({Fname: event.target.value})
+  }
 
-* Copyright 2019 Creative Tim (https://www.creative-tim.com)
-* Licensed under MIT (https://github.com/creativetimofficial/paper-kit-react/blob/master/LICENSE.md)
+  onLNameChange = (event) =>{
+    this.setState({Lname: event.target.value})
+  }
 
-* Coded by Creative Tim
+  onCAddressChange = (event) =>{
+    this.setState({caddress: event.target.value})
+  }
 
-=========================================================
+  onCCityChange = (event) =>{
+    this.setState({ccity: event.target.value})
+  }
 
-* The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+  onCStateChange = (event) =>{
+    this.setState({cstate: event.target.value})
+  }
 
-*/
-import React from "react";
+  onCZipChange = (event) =>{
+    this.setState({czip: event.target.value})
+  }
 
-// reactstrap components
-import { Button, Card, Form, Input, Container, Row, Col } from "reactstrap";
+  onSubmitRegister = () => {
+    fetch('http://localhost:3000/register-page', {
+      method: 'post',
+      headers: {'Content-Type': 'application/json'},
+      body: JSON.stringify({
+        Fname: this.state.Fname,
+        Lname: this.state.Lname,
+        caddress: this.state.caddress,
+        ccity: this.state.ccity,
+        cstate: this.state.cstate,
+        czip: this.state.czip
+      })
+    })
+        .then(response => response.json())
+        .then(user => {
+          if(user){
+            this.props.loadUser(user);
+            this.setState({isRegistered: true})
+            console.log('Registered')
+          }
 
-// core components
-import Navigation from "components/Navigation.js";
+          else
+            console.log('Could not register')
+        })
+  }
 
-function RegisterPage() {
-  document.documentElement.classList.remove("nav-open");
-  React.useEffect(() => {
-    document.body.classList.add("register-page");
-    return function cleanup() {
-      document.body.classList.remove("register-page");
-    };
-  });
-  return (
-    <>
-      <Navigation />
-      <div
-        className="page-header"
-        style={{
-          backgroundImage: "url(" + require("assets/img/login-image.jpg") + ")"
-        }}
-      >
-        <div className="filter" />
-        <Container>
-          <Row>
-            <Col className="ml-auto mr-auto" lg="4">
-              <Card className="card-register ml-auto mr-auto">
-                <h3 className="title mx-auto">Welcome</h3>
-                <div className="social-line text-center">
-                  <Button
-                    className="btn-neutral btn-just-icon mr-1"
-                    color="facebook"
-                    href="#pablo"
-                    onClick={e => e.preventDefault()}
-                  >
-                    <i className="fa fa-facebook-square" />
-                  </Button>
-                  <Button
-                    className="btn-neutral btn-just-icon mr-1"
-                    color="google"
-                    href="#pablo"
-                    onClick={e => e.preventDefault()}
-                  >
-                    <i className="fa fa-google-plus" />
-                  </Button>
-                  <Button
-                    className="btn-neutral btn-just-icon"
-                    color="twitter"
-                    href="#pablo"
-                    onClick={e => e.preventDefault()}
-                  >
-                    <i className="fa fa-twitter" />
-                  </Button>
+  render(){
+    let pageHeader = React.createRef();
+    if(!this.state.isRegistered)
+      return(
+          <div>
+            <Navigation/>
+            <div
+                style={{
+                  backgroundImage: "url(" + require("assets/img/fancy-retailer-background.jpg") + ")"
+                }}
+                className="page-header"
+                data-parallax={true}
+                ref={pageHeader}
+            >
+              <div className="filter" />
+              <Container style={{ display: 'flex', justifyContent: "center", alignItems: "center" }}>
+                <div >
+                  <div style={{width: '40rem'}}>
+                    <Card className={"center text"}>
+                      <div className={"motto text-center"}>
+                        <CardTitle tag={'h3'}>Please fill out the information to register!</CardTitle>
+                      </div>
+                      <CardBody>
+                        <Row form>
+                          <Col md={6}>
+                            <FormGroup>
+                              <Label for="exampleEmail">First Name</Label>
+                              <Input type="text" id="Fname" placeholder="John" onChange={this.onFNameChange} />
+                            </FormGroup>
+                          </Col>
+                          <Col md={6}>
+                            <FormGroup>
+                              <Label for="examplePassword">Last Name</Label>
+                              <Input type="text" name="password" id="Lname" placeholder="Smith" onChange={this.onLNameChange}/>
+                            </FormGroup>
+                          </Col>
+                        </Row>
+                        <FormGroup>
+                          <Label for="exampleAddress">Address</Label>
+                          <Input type="text" name="address" id="exampleAddress" placeholder="1234 Main St" onChange={this.onCAddressChange}/>
+                        </FormGroup>
+                        <Row form>
+                          <Col md={6}>
+                            <FormGroup>
+                              <Label for="exampleCity">City</Label>
+                              <Input type="text" name="city" id="exampleCity" onChange={this.onCCityChange}/>
+                            </FormGroup>
+                          </Col>
+                          <Col md={4}>
+                            <FormGroup>
+                              <Label for="exampleState">State</Label>
+                              <Input type="text" name="state" id="exampleState" onChange={this.onCStateChange}/>
+                            </FormGroup>
+                          </Col>
+                          <Col md={2}>
+                            <FormGroup>
+                              <Label for="exampleZip">Zip</Label>
+                              <Input type="text" name="zip" id="exampleZip" onChange={this.onCZipChange}/>
+                            </FormGroup>
+                          </Col>
+                        </Row>
+                        <div className={"motto text-center"}>
+                          <Button type={'submit'} onClick={this.onSubmitRegister}>Register</Button>
+                        </div>
+                      </CardBody>
+                    </Card>
+                  </div>
                 </div>
-                <Form className="register-form">
-                  <label>Email</label>
-                  <Input placeholder="Email" type="text" />
-                  <label>Password</label>
-                  <Input placeholder="Password" type="password" />
-                  <Button block className="btn-round" color="danger">
-                    Register
-                  </Button>
-                </Form>
-                <div className="forgot">
-                  <Button
-                    className="btn-link"
-                    color="danger"
-                    href="#pablo"
-                    onClick={e => e.preventDefault()}
-                  >
-                    Forgot password?
-                  </Button>
-                </div>
-              </Card>
-            </Col>
-          </Row>
-        </Container>
-        <div className="footer register-footer text-center">
-          <h6>
-            © {new Date().getFullYear()}, made with{" "}
-            <i className="fa fa-heart heart" /> by Creative Tim
-          </h6>
-        </div>
-      </div>
-    </>
-  );
+              </Container>
+            </div>
+          </div>
+      );
+    else
+      return(
+          <Redirect to={'/'}/>
+      );
+  }
 }
 
 export default RegisterPage;

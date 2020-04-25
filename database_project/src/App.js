@@ -19,7 +19,7 @@
 import React, { Component } from 'react';
 import LandingPage from "./views/examples/LandingPage";
 import {BrowserRouter, Redirect, Route, Switch} from "react-router-dom";
-import NucleoIcons from "./views/NucleoIcons";
+import SignInPage from "./views/SignInPage";
 import ProfilePage from "./views/examples/ProfilePage";
 import RegisterPage from "./views/examples/RegisterPage";
 
@@ -27,37 +27,50 @@ class App extends Component {
     constructor() {
         super();
         this.state ={
-            route: 'signin',
-            isSignedIn: false
+            isSignedIn: false,
+            user: {
+                Fname: '',
+                Lname: '',
+                caddress: '',
+                ccity: '',
+                cstate: '',
+                czip: ''
+            }
         }
     }
 
-    componentDidMount() {
-        fetch('http://localhost:3000')
-            .then(response => response.json())
-            .then(console.log)
+    loadUser = (data) => {
+        this.setState({
+            Fname: data.Fname,
+            Lname: data.Lname,
+            caddress: data.caddress,
+            ccity: data.ccity,
+            cstate: data.cstate,
+            czip: data.czip
+        })
     }
 
     render() {
         return (
             <BrowserRouter>
                 <Switch>
-                    <Route path="/" render={props => <LandingPage {...props} />} />
+                    <Route exact={true} path="/" render={props => <LandingPage isSignedIn={this.state.isSignedIn} {...props} />} />
                     <Route
-                        path="/nucleo-icons"
-                        render={props => <NucleoIcons {...props} />}
+                        exact={true}
+                        path="/signin"
+                        render={props => <SignInPage isSignedIn={this.state.isSignedIn} loadUser={this.loadUser} {...props} />}
                     />
                     <Route
                         path="/landing-page"
                         render={props => <LandingPage {...props} />}
                     />
                     <Route
-                        path="/profile-page"
+                        path="/register"
                         render={props => <ProfilePage {...props} />}
                     />
                     <Route
                         path="/register-page"
-                        render={props => <RegisterPage {...props} />}
+                        render={props => <RegisterPage isSignedIn={this.state.isSignedIn} loadUser={this.loadUser}{...props} />}
                     />
                     <Redirect to="/" />
                 </Switch>

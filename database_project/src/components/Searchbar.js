@@ -1,5 +1,5 @@
 import React from 'react';
-import { InputGroupAddon, InputGroupText, Input, InputGroup, FormGroup, Button } from "reactstrap";
+import { InputGroupAddon, Input, InputGroup, FormGroup, Button } from "reactstrap";
 
 const Searchbar = () => {
     return (

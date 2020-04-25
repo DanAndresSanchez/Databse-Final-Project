@@ -1,6 +1,17 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const cors = require('cors');
+const knex = require('knex');
+
+const database = knex({
+    client: 'mysql',
+    connection: {
+        host: 'localhost',
+        user: 'root',
+        password: 'password',
+        database: 'final_project'
+    }
+})
 
 const app = express();
 app.use(bodyParser.json());
@@ -47,18 +58,24 @@ app.listen(3000, () => {
 })
 
 app.post('/signin', (req, res) => {
-    if(req.body.customerID === db.users[0].customerID &&
-        req.body.Fname === db.users[0].Fname)
-        res.json('Success');
-    else
-        res.status(400).json('Error logging in');
-    res.send('signing');
+    database.select('*').from('customer')
+        .where('customerID','=', req.body.customerID)
+        .then(data => {
+            return database.select('*').from('customer')
+                .where('Fname', '=', req.body.Fname, 'and', 'Lname', '=', req.body.Lname)
+                .then(user =>{
+                    console.log(user)
+                    res.json(user[0])
+                })
+                .catch(err => res.status(400).json('Unable to get user'))
+        })
+        .catch(err => res.status(400).json('Wrong Credentials'))
 })
 
-app.post('/register', (req, res) =>{
+app.post('/register-page', (req, res) =>{
     const {Fname, Lname, caddress, ccity, cstate, czip} = req.body;
-    db.users.push({
-        "custoerID": toString(db.users.length + 1),
+    database('customer')
+        .insert({
         "Fname": Fname,
         "Lname": Lname,
         "caddress": caddress,
@@ -66,7 +83,10 @@ app.post('/register', (req, res) =>{
         "cstate": cstate,
         "czip": czip
     })
-    res.json(db.users[db.users.length - 1]);
+        .then(user => {
+            res.json(user[0]);
+        })
+        .catch(err => res.status(400).json('Unable to register.'))
 })
 
 app.get('/profile/:id', (req, res) => {

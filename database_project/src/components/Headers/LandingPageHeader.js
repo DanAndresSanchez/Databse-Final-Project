@@ -19,7 +19,8 @@
 import React from "react";
 
 // reactstrap components
-import { Button, Container } from "reactstrap";
+import { Card, CardBody, CardFooter } from "reactstrap";
+import { RiVipCrownLine } from 'react-icons/ri';
 
 // core components
 
@@ -42,23 +43,40 @@ function LandingPageHeader() {
 
   return (
     <>
-      <div
-        style={{
-          backgroundImage: "url(" + require("assets/img/fancy-retailer-background.jpg") + ")"
-        }}
-        className="page-header"
-        data-parallax={true}
-        ref={pageHeader}
-      >
         <div className="filter" />
-        <Container>
-          <div className="motto text-center">
-            <h1>MyFancyRetailer</h1>
-            <h3>We sell stuff and things, just fancier than the other guys</h3>
-            <br />
-          </div>
-        </Container>
-      </div>
+        <Card
+            data-background="image"
+            style={{
+              backgroundImage:
+                  "url(" + require("assets/img/fancy-retailer-background.jpg") + ")"
+            }}
+            className={'card-blog'}
+        >
+          <CardBody>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <h2 className="card-category">MyFancyRetailer</h2>
+            <div className="card-icon">
+              <RiVipCrownLine size={'4em'}/>
+            </div>
+            <h4 className="card-description">
+              We provide and ship products, just fancier than the other guys
+            </h4>
+            <CardFooter>
+              <br/>
+              <br/>
+              <br/>
+              <br/>
+              <br/>
+              <br/>
+              <br/>
+            </CardFooter>
+          </CardBody>
+        </Card>
     </>
   );
 }
