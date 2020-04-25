@@ -16,7 +16,7 @@
 * The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
 
 */
-import React from "react";
+import React, { Component } from "react";
 
 // reactstrap components
 import {Container, Row, Col} from "reactstrap";
@@ -28,58 +28,61 @@ import DemoFooter from "components/Footers/DemoFooter.js";
 import ProductCard from "../../components/ProductCard";
 import Searchbar from "../../components/Searchbar";
 
-function LandingPage() {
-  document.documentElement.classList.remove("nav-open");
-  React.useEffect(() => {
-    document.body.classList.add("profile-page");
-    return function cleanup() {
-      document.body.classList.remove("profile-page");
-    };
-  });
-  return (
-    <>
-      <Navigation />
-      <br/>
-      <br/>
-      <br/>
-      <br/>
-      <br/>
-      <LandingPageHeader />
-      <div className="main">
-        <div className="section text-center">
-          <Container>
-            <Searchbar/>
-            <Row>
-              <Col className="ml-auto mr-auto" md="8">
-                <h2 className="title">Best Sellers</h2>
+class LandingPage extends Component{
+  constructor() {
+    super();
+    this.state = {
+      products: []
+    }
+  }
+
+  async componentDidMount() {
+    const response = await fetch('http://localhost:3000/');
+    const data = await response.json();
+    this.setState({products: data})
+  }
+
+  render() {
+    return (
+        <>
+          <Navigation />
+          <br/>
+          <br/>
+          <br/>
+          <LandingPageHeader />
+          <div className="main">
+            <div className="section text-center">
+              <Container>
+                <Searchbar/>
+                <Row>
+                  <Col className="ml-auto mr-auto" md="8">
+                    <h2 className="title">Best Sellers</h2>
+                    <br />
+                  </Col>
+                </Row>
                 <br />
-              </Col>
-            </Row>
-            <br />
-            <br />
-            <Row className="justify-content-md-center">
-              <Col sm={{size: 'auto'}}>
-                <ProductCard name={"Microphone"} rating={9} price={"$99.99"} amount={47} key={1}/>
-              </Col>
-              <Col sm={{size: 'auto'}}>
-                <ProductCard name={"Dog Plush"} rating={7} price={"$10.99"} amount={84} key={2}/>
-              </Col>
-              <Col sm={{size: 'auto'}}>
-                <ProductCard name={"Seltzer"} rating={10} price={"$0.99"} amount={39} key={3}/>
-              </Col>
-              <Col sm={{size: 'auto'}}>
-                <ProductCard name={"Calculator"} rating={8} price={"$149.99"} amount={22} key={4}/>
-              </Col>
-              <Col sm={{size: 'auto'}}>
-                <ProductCard name={"Pencil Pack of 10"} rating={8} price={"$14.99"} amount={11} key={5}/>
-              </Col>
-            </Row>
-          </Container>
-        </div>
-      </div>
-      <DemoFooter />
-    </>
-  );
+                <br />
+                <Row className="justify-content-md-center">
+                  {this.state.products.map(product => (
+                      <Col sm={{size: "auto"}}>
+                        <ProductCard
+                            name={product.Pname}
+                            price={'$' + product.price}
+                            rating={product.rating}
+                            amount={product.amount}
+                            key={product.Pname}
+                            style={{padding: '1em'}}
+                        />
+                      </Col>
+                  ))}
+                </Row>
+              </Container>
+            </div>
+          </div>
+          <DemoFooter />
+        </>
+    );
+  }
 }
 
 export default LandingPage;

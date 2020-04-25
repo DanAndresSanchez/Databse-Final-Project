@@ -17,40 +17,11 @@ const app = express();
 app.use(bodyParser.json());
 app.use(cors());
 
-const db = {
-    users: [
-        {
-            customerID: '1',
-            Fname: 'Allene',
-            Lname: "Sanchez",
-            caddress: "123 Streling Court",
-            ccity: "Blender",
-            cstate: "NJ",
-            czip: "04521"
-        },
-        {
-            customerID: '2',
-            Fname: 'Marino',
-            Lname: "Sanchez",
-            caddress: "123 Streling Court",
-            ccity: "Blender",
-            cstate: "NJ",
-            czip: "04521"
-        },
-        {
-            customerID: '3',
-            Fname: 'Twana',
-            Lname: "Sanchez",
-            caddress: "123 Streling Court",
-            ccity: "Blender",
-            cstate: "NJ",
-            czip: "04521"
-        },
-    ]
-}
-
-app.get('/', (req,res) => {
-    res.send(db.users);
+app.get('/', (req,res) =>{
+    database.select('*').from('top_products')
+        .then(products =>{
+            res.json(products)
+        })
 })
 
 app.listen(3000, () => {
@@ -89,13 +60,22 @@ app.post('/register-page', (req, res) =>{
         .catch(err => res.status(400).json('Unable to register.'))
 })
 
-app.get('/profile/:id', (req, res) => {
-    const { id } = req.params;
-    db.users.forEach(user => {
-        if(user.customerID === id)
-            return res.json(user);
-    })
-    res.status(404).json('No customer found');
+app.get('/profile/:customerID', (req, res) => {
+    const { customerID } = req.params;
+    database.select('*').from('customer').where({customerID})
+        .then(user => {
+            if(user.length)
+                res.json(user[0])
+            else
+                res.status(400).json('No user found')
+        })
+})
+
+app.get('/products', (req,res) =>{
+    database.select('*').from('products_rated')
+        .then(products =>{
+            res.json(products)
+        })
 })
 /*
     /landing  GET = top 5 rated products

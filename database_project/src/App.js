@@ -22,6 +22,7 @@ import {BrowserRouter, Redirect, Route, Switch} from "react-router-dom";
 import SignInPage from "./views/SignInPage";
 import ProfilePage from "./views/examples/ProfilePage";
 import RegisterPage from "./views/examples/RegisterPage";
+import AllProductsPage from "./views/AllProductsPage";
 
 class App extends Component {
     constructor() {
@@ -65,8 +66,9 @@ class App extends Component {
                         render={props => <LandingPage {...props} />}
                     />
                     <Route
-                        path="/register"
-                        render={props => <ProfilePage {...props} />}
+                        exact={true}
+                        path="/products"
+                        render={props => <AllProductsPage {...props} />}
                     />
                     <Route
                         path="/register-page"
