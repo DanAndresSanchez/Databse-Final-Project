@@ -77,6 +77,17 @@ app.get('/products', (req,res) =>{
             res.json(products)
         })
 })
+
+app.get('/products/:UPC', (req,res) =>{
+    const {UPC} = req.params;
+    database.select('*').from('products_rated').where({UPC})
+        .then(product =>{
+            if(product.length)
+                res.json(product[0])
+            else
+                res.status(400).json('Could not get product')
+        })
+})
 /*
     /landing  GET = top 5 rated products
     /login POST = success/fail

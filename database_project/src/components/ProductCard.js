@@ -26,8 +26,8 @@ class ProductCard extends Component{
     render(){
         this.getPic();
         return(
-            <Card  style={{width: '18rem'}}>
-                <CardImg top src={this.state.url} alt="..."/>
+            <Card  style={{width: '15rem'}}>
+                <CardImg top height='1rem' src={this.state.url} alt="..."/>
                 <CardBody>
                     <a href="#pablo" onClick={e => e.preventDefault()}>
                         <div className="motto text-center">
