@@ -20,9 +20,9 @@ import React, { Component } from 'react';
 import LandingPage from "./views/examples/LandingPage";
 import {BrowserRouter, Redirect, Route, Switch} from "react-router-dom";
 import SignInPage from "./views/SignInPage";
-import ProfilePage from "./views/examples/ProfilePage";
 import RegisterPage from "./views/examples/RegisterPage";
 import AllProductsPage from "./views/AllProductsPage";
+import SingleProductPage from "./views/SingleProductPage";
 
 class App extends Component {
     constructor() {
@@ -71,8 +71,14 @@ class App extends Component {
                         render={props => <AllProductsPage {...props} />}
                     />
                     <Route
+                        exact={true}
                         path="/register-page"
                         render={props => <RegisterPage isSignedIn={this.state.isSignedIn} loadUser={this.loadUser}{...props} />}
+                    />
+                    <Route
+                        exact={true}
+                        path="/products/:UPC"
+                        render={props => <SingleProductPage {...props} />}
                     />
                     <Redirect to="/" />
                 </Switch>

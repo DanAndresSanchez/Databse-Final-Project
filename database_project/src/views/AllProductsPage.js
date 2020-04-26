@@ -22,8 +22,6 @@ class AllProductsPage extends Component{
 
     onSearchChange = (event) =>{
         this.setState({searchField: event.target.value})
-        console.log(event.target.value);
-
     }
 
 
@@ -31,7 +29,6 @@ class AllProductsPage extends Component{
         const filteredProducts = this.state.products.filter(product => {
             return product.Pname.toLowerCase().includes(this.state.searchField.toLowerCase());
         })
-        console.log(this.state.products)
         if(!this.state.products.length)
             return(
                 <div>
@@ -54,14 +51,12 @@ class AllProductsPage extends Component{
                     <Container>
                         <Searchbar style={{padding: '20px'}} searchChange={this.onSearchChange}/>
                         <br/>
-
-                        <Col>
-                            <Row className={'justify-content-md-center'} xs={'3'}>
-                                <Col>
-                                    <form>
+                            <form>
+                                <Row>
+                                    <Col>
                                         <FormGroup>
                                             <Label for="exampleSelect1">Department</Label>
-                                            <Input type="select" name="select" id="exampleSelect1" multiple>
+                                            <Input type="select" name="select" id="exampleSelect1">
                                                 <option>-</option>
                                                 <option>Baby</option>
                                                 <option>Book</option>
@@ -74,9 +69,11 @@ class AllProductsPage extends Component{
                                                 <option>Toys</option>
                                             </Input>
                                         </FormGroup>
+                                    </Col>
+                                    <Col>
                                         <FormGroup>
                                             <Label for="exampleSelect1">Rating</Label>
-                                            <Input type="select" name="select" id="exampleSelect1" multiple>
+                                            <Input type="select" name="select" id="exampleSelect1">
                                                 <option>-</option>
                                                 <option>4 and up</option>
                                                 <option>3 and up</option>
@@ -84,9 +81,11 @@ class AllProductsPage extends Component{
                                                 <option>1 and up</option>
                                             </Input>
                                         </FormGroup>
+                                    </Col>
+                                    <Col>
                                         <FormGroup>
                                             <Label for="exampleSelect1">Price</Label>
-                                            <Input type="select" name="select" id="exampleSelect1" multiple>
+                                            <Input type="select" name="select" id="exampleSelect1">
                                                 <option>-</option>
                                                 <option>Less than $10</option>
                                                 <option>$10 - $50</option>
@@ -95,8 +94,13 @@ class AllProductsPage extends Component{
                                                 <option>More than $500</option>
                                             </Input>
                                         </FormGroup>
-                                    </form>
-                                </Col>
+                                    </Col>
+                                </Row>
+                            </form>
+                        <hr/>
+                        <Col>
+                            <Row className={'justify-content-md-center'} xs={'3'}>
+
                                 {filteredProducts.map(product => (
                                     <Col sm={{size: "3"}}>
                                         <ProductCard
@@ -105,6 +109,7 @@ class AllProductsPage extends Component{
                                             rating={product.rating}
                                             amount={product.amount}
                                             key={product.Pname}
+                                            UPC={product.UPC}
                                             style={{padding: '1em'}}
                                         />
                                     </Col>

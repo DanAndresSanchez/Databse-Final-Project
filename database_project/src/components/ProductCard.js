@@ -3,6 +3,7 @@ import axios from 'axios';
 import { Card, CardBody, CardTitle, CardImg} from "reactstrap";
 import StarRating from "./StarRating";
 import Button from "reactstrap/es/Button";
+import {Link} from "react-router-dom";
 
 class ProductCard extends Component{
     constructor(props) {
@@ -20,7 +21,7 @@ class ProductCard extends Component{
             }
         });
 
-        this.setState({url: response.data.results[2].urls.regular}) ;
+        this.setState({url: response.data.results[5].urls.regular}) ;
     }
 
     render(){
@@ -38,7 +39,10 @@ class ProductCard extends Component{
                     <StarRating rating={this.props.rating} amount={this.props.amount} name={this.props.name}/>
                     <h5 className="card-description text-center">{ this.props.price }</h5>
                     <div className={'motto text-center'}>
-                        <Button>Buy Now</Button>
+                        <Link to={'/products/'+ this.props.UPC}>
+                            <Button>Buy Now</Button>
+                        </Link>
+
                     </div>
                 </CardBody>
 
