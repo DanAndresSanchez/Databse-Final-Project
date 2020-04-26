@@ -8,7 +8,8 @@ class AllProductsPage extends Component{
     constructor(props) {
         super(props);
         this.state={
-            products: []
+            products: [],
+            searchField: ''
         }
     }
 
@@ -19,8 +20,17 @@ class AllProductsPage extends Component{
         this.setState({products: data})
     }
 
+    onSearchChange = (event) =>{
+        this.setState({searchField: event.target.value})
+        console.log(event.target.value);
+
+    }
+
 
     render() {
+        const filteredProducts = this.state.products.filter(product => {
+            return product.Pname.toLowerCase().includes(this.state.searchField.toLowerCase());
+        })
         console.log(this.state.products)
         if(!this.state.products.length)
             return(
@@ -42,7 +52,7 @@ class AllProductsPage extends Component{
                     <br/>
                     <br/>
                     <Container>
-                        <Searchbar style={{padding: '20px'}}/>
+                        <Searchbar style={{padding: '20px'}} searchChange={this.onSearchChange}/>
                         <br/>
 
                         <Col>
@@ -87,7 +97,7 @@ class AllProductsPage extends Component{
                                         </FormGroup>
                                     </form>
                                 </Col>
-                                {this.state.products.map(product => (
+                                {filteredProducts.map(product => (
                                     <Col sm={{size: "3"}}>
                                         <ProductCard
                                             name={product.Pname}
