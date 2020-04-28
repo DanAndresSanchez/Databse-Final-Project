@@ -70,6 +70,7 @@ class LandingPage extends Component{
                             price={'$' + product.price}
                             rating={product.rating}
                             amount={product.amount}
+                            UPC={product.UPC}
                             key={product.Pname}
                             style={{padding: '1em'}}
                         />

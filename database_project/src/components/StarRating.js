@@ -12,13 +12,12 @@ class StarRating extends Component{
         }
     }
     render(){
-        const amount = this.state.rating;
         let star;
-        if( Number.isInteger(amount) ){
+        if( Number.isInteger(this.state.rating) ){
             star = <div>
                         <Row className="justify-content-md-center">
                             <Col xs="auto">
-                                {[...Array(amount )].map(thing =>{
+                                {[...Array(this.state.rating )].map(thing =>{
                                     return <FaStar color={"#fcc107"}/>
                                 })}
                             </Col>
@@ -32,7 +31,7 @@ class StarRating extends Component{
             star = <div className={"inline"}>
                         <Row className="justify-content-md-center">
                             <Col xs="auto">
-                                {[...Array(Math.floor(amount ))].map(thing =>{
+                                {[...Array(Math.floor(this.state.rating ))].map(thing =>{
                                     return <FaStar color={"#fcc107"}/>
                                 })}
                                 <FaStarHalf  color={"#fcc107"}/>

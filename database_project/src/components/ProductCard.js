@@ -20,8 +20,7 @@ class ProductCard extends Component{
                 Authorization: 'Client-ID dtaTz_Cge-6eCOjxaNcyFR-H4-nX9fcSzkZfx8B6LfA'
             }
         });
-
-        this.setState({url: response.data.results[5].urls.regular}) ;
+        this.setState({url: response.data.results[7].urls.regular}) ;
     }
 
     render(){

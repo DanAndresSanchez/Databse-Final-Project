@@ -24,11 +24,26 @@ import { Row, Container } from "reactstrap";
 
 function DemoFooter() {
   return (
-    <footer className="footer footer-black footer-white">
+    <footer className="footer" style={{backgroundColor: '#13161a'}}>
+      <hr/>
+      <br/>
       <Container>
         <Row>
           <nav className="footer-nav">
             <ul>
+              <li>
+                <a href={'https://github.com/DanAndresSanchez/MyFancyRetailer-Frontend'} target={'_blank'}>
+                  MyFancyRetailer
+                </a>
+              </li>
+              <li>
+                <a
+                    href="https://github.com/DanAndresSanchez"
+                    target="_blank"
+                >
+                  Dan Sanchez
+                </a>
+              </li>
               <li>
                 <a
                   href="https://www.creative-tim.com?ref=pkr-footer"
@@ -37,32 +52,16 @@ function DemoFooter() {
                   Creative Tim
                 </a>
               </li>
-              <li>
-                <a
-                  href="http://blog.creative-tim.com/?ref=pkr-footer"
-                  target="_blank"
-                >
-                  Blog
-                </a>
-              </li>
-              <li>
-                <a
-                  href="https://www.creative-tim.com/license?ref=pkr-footer"
-                  target="_blank"
-                >
-                  Licenses
-                </a>
-              </li>
             </ul>
           </nav>
           <div className="credits ml-auto">
             <span className="copyright">
-              © {new Date().getFullYear()}, made with{" "}
-              <i className="fa fa-heart heart" /> by Creative Tim
+              Resources by Creative Time, Written by Dan Sanchez
             </span>
           </div>
         </Row>
       </Container>
+      <br/>
     </footer>
   );
 }

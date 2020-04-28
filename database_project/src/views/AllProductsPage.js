@@ -3,6 +3,7 @@ import ProductCard from "../components/ProductCard";
 import { Row, Col , Container, FormGroup, Input, Label } from 'reactstrap';
 import Navigation from "../components/Navigation";
 import Searchbar from "../components/Searchbar";
+import DemoFooter from "../components/Footers/DemoFooter";
 
 class AllProductsPage extends Component{
     constructor(props) {
@@ -87,11 +88,8 @@ class AllProductsPage extends Component{
                                             <Label for="exampleSelect1">Price</Label>
                                             <Input type="select" name="select" id="exampleSelect1">
                                                 <option>-</option>
-                                                <option>Less than $10</option>
-                                                <option>$10 - $50</option>
-                                                <option>$50 - $100</option>
-                                                <option>$100 - $500</option>
-                                                <option>More than $500</option>
+                                                <option>Low To High</option>
+                                                <option>High To Low</option>
                                             </Input>
                                         </FormGroup>
                                     </Col>
@@ -118,6 +116,7 @@ class AllProductsPage extends Component{
                         </Col>
 
                     </Container>
+                    <DemoFooter />
                 </div>
             )
     }

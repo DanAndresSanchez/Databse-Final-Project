@@ -169,7 +169,9 @@ CREATE TABLE `products_rated` (
   `Pname` varchar(40) DEFAULT NULL,
   `price` decimal(10,2) DEFAULT NULL,
   `rating` decimal(7,4) DEFAULT NULL,
-  `amount` bigint NOT NULL DEFAULT '0'
+  `amount` bigint NOT NULL DEFAULT '0',
+  `cataegory` varchar(45) DEFAULT NULL,
+  KEY `catagory_idx` (`cataegory`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -179,7 +181,7 @@ CREATE TABLE `products_rated` (
 
 LOCK TABLES `products_rated` WRITE;
 /*!40000 ALTER TABLE `products_rated` DISABLE KEYS */;
-INSERT INTO `products_rated` VALUES (28,'AC Unit',2000.00,3.0000,12),(50,'Baby Learns German',50.00,4.0000,7),(49,'Babys First Game Console',150.00,4.0000,7),(40,'Basic Telescope',100.00,5.0000,4),(8,'Bass Booster Subwoofers',124.99,3.3333,3),(20,'Book of Colors and Numbers',9.99,3.7500,4),(39,'Calculus Book',50.00,3.1667,6),(23,'Car Stereo System',60.00,3.4000,5),(16,'Chef Gourmet Pasta',8.00,1.0000,3),(14,'DG Camera',120.00,4.2500,4),(33,'Digital Clock',15.00,3.0714,14),(7,'Far Out! Telescope',1099.99,2.0000,4),(42,'Gerber Baby Food',5.00,2.3333,3),(3,'Happy Smiles Face Paints',19.99,3.1667,6),(12,'Head Secure Hard Hat',59.99,3.5000,4),(41,'High End Telescope',100.00,2.0000,4),(11,'Job Hunter Discount Suit',74.99,2.4286,7),(45,'Kids Baking Set',50.00,4.6667,3),(43,'Leap Frog Tablet',100.00,2.6000,5),(47,'Learn To Drive Game',50.00,3.0000,6),(46,'Math Card Game',10.00,1.0000,2),(21,'Mini Acoustic Guitar',35.00,1.5000,4),(6,'No More Stink Socks',9.99,2.8000,5),(4,'Overpriced Calculator: College Edition',99.99,3.8333,6),(17,'Portable Motion Detector',50.00,3.0000,3),(27,'Printer Paper',4.00,3.2667,15),(15,'Puzzle Blocks for Kids',19.99,3.6667,6),(44,'Robot Chef',4999.99,3.1667,6),(18,'Smart Cooker',65.00,3.0000,3),(37,'Smartwatch',250.00,2.8667,15),(9,'Star Gazer Junior',39.99,2.5000,6),(36,'Star Wars Sticker',0.50,2.5833,12),(19,'Summer Dress',19.00,4.0000,5),(31,'Sunglasses',50.00,2.8462,13),(10,'Sunshine Yellow',44.99,3.7143,7),(5,'Super-Sensor Door Opener',120.00,3.5556,9),(2,'Sure Feet Running Shoes',59.99,2.7500,4),(30,'Surface Pro 4',600.00,3.6923,13),(34,'Sweater',34.99,3.0667,15),(25,'Talking Doll',25.00,3.4286,7),(26,'Telescope',300.00,2.1538,13),(13,'The Overclocker: Extreme CPU',349.99,2.7500,4),(32,'Thermal Sensor',350.00,2.7143,14),(35,'Transformer Action Figure',5.00,3.7143,14),(22,'Travel Coffee Maker',39.00,2.3333,6),(29,'Ventilation Filter',22.00,2.8571,14),(38,'Winnie the Pooh Book',7.99,3.0000,11),(24,'Winter Jacket',55.00,3.2500,4),(48,'X-Ray Goggles',100.00,2.7500,4),(1,'Xtreme Graphics 5000',399.99,2.8750,8);
+INSERT INTO `products_rated` VALUES (28,'AC Unit',2000.00,3.0000,12,NULL),(50,'Baby Learns German',50.00,4.0000,7,NULL),(49,'Babys First Game Console',150.00,4.0000,7,NULL),(40,'Basic Telescope',100.00,5.0000,4,NULL),(8,'Bass Booster Subwoofers',124.99,3.3333,3,NULL),(20,'Book of Colors and Numbers',9.99,3.7500,4,NULL),(39,'Calculus Book',50.00,3.1667,6,NULL),(23,'Car Stereo System',60.00,3.4000,5,NULL),(16,'Chef Gourmet Pasta',8.00,1.0000,3,NULL),(14,'DG Camera',120.00,4.2500,4,NULL),(33,'Digital Clock',15.00,3.0714,14,NULL),(7,'Far Out! Telescope',1099.99,2.0000,4,NULL),(42,'Gerber Baby Food',5.00,2.3333,3,NULL),(3,'Happy Smiles Face Paints',19.99,3.1667,6,NULL),(12,'Head Secure Hard Hat',59.99,3.5000,4,NULL),(41,'High End Telescope',100.00,2.0000,4,NULL),(11,'Job Hunter Discount Suit',74.99,2.4286,7,NULL),(45,'Kids Baking Set',50.00,4.6667,3,NULL),(43,'Leap Frog Tablet',100.00,2.6000,5,NULL),(47,'Learn To Drive Game',50.00,3.0000,6,NULL),(46,'Math Card Game',10.00,1.0000,2,NULL),(21,'Mini Acoustic Guitar',35.00,1.5000,4,NULL),(6,'No More Stink Socks',9.99,2.8000,5,NULL),(4,'Overpriced Calculator: College Edition',99.99,3.8333,6,NULL),(17,'Portable Motion Detector',50.00,3.0000,3,NULL),(27,'Printer Paper',4.00,3.2667,15,NULL),(15,'Puzzle Blocks for Kids',19.99,3.6667,6,NULL),(44,'Robot Chef',4999.99,3.1667,6,NULL),(18,'Smart Cooker',65.00,3.0000,3,NULL),(37,'Smartwatch',250.00,2.8667,15,NULL),(9,'Star Gazer Junior',39.99,2.5000,6,NULL),(36,'Star Wars Sticker',0.50,2.5833,12,NULL),(19,'Summer Dress',19.00,4.0000,5,NULL),(31,'Sunglasses',50.00,2.8462,13,NULL),(10,'Sunshine Yellow',44.99,3.7143,7,NULL),(5,'Super-Sensor Door Opener',120.00,3.5556,9,NULL),(2,'Sure Feet Running Shoes',59.99,2.7500,4,NULL),(30,'Surface Pro 4',600.00,3.6923,13,NULL),(34,'Sweater',34.99,3.0667,15,NULL),(25,'Talking Doll',25.00,3.4286,7,NULL),(26,'Telescope',300.00,2.1538,13,NULL),(13,'The Overclocker: Extreme CPU',349.99,2.7500,4,NULL),(32,'Thermal Sensor',350.00,2.7143,14,NULL),(35,'Transformer Action Figure',5.00,3.7143,14,NULL),(22,'Travel Coffee Maker',39.00,2.3333,6,NULL),(29,'Ventilation Filter',22.00,2.8571,14,NULL),(38,'Winnie the Pooh Book',7.99,3.0000,11,NULL),(24,'Winter Jacket',55.00,3.2500,4,NULL),(48,'X-Ray Goggles',100.00,2.7500,4,NULL),(1,'Xtreme Graphics 5000',399.99,2.8750,8,NULL);
 /*!40000 ALTER TABLE `products_rated` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -540,6 +542,26 @@ DELIMITER ;
 /*!50003 SET character_set_client  = @saved_cs_client */ ;
 /*!50003 SET character_set_results = @saved_cs_results */ ;
 /*!50003 SET collation_connection  = @saved_col_connection */ ;
+/*!50003 DROP PROCEDURE IF EXISTS `insert_to_contains` */;
+/*!50003 SET @saved_cs_client      = @@character_set_client */ ;
+/*!50003 SET @saved_cs_results     = @@character_set_results */ ;
+/*!50003 SET @saved_col_connection = @@collation_connection */ ;
+/*!50003 SET character_set_client  = utf8mb4 */ ;
+/*!50003 SET character_set_results = utf8mb4 */ ;
+/*!50003 SET collation_connection  = utf8mb4_0900_ai_ci */ ;
+/*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
+/*!50003 SET sql_mode              = 'STRICT_TRANS_TABLES,NO_ENGINE_SUBSTITUTION' */ ;
+DELIMITER ;;
+CREATE DEFINER=`root`@`localhost` PROCEDURE `insert_to_contains`( in product int, in amount tinyint, in id int )
+BEGIN
+declare most_recent int default (select max(orderID) from orders where customerID = id);
+insert into contains(orderID, UPC, quantity) values (most_recent, product, amount);
+END ;;
+DELIMITER ;
+/*!50003 SET sql_mode              = @saved_sql_mode */ ;
+/*!50003 SET character_set_client  = @saved_cs_client */ ;
+/*!50003 SET character_set_results = @saved_cs_results */ ;
+/*!50003 SET collation_connection  = @saved_col_connection */ ;
 /*!50003 DROP PROCEDURE IF EXISTS `need_reorder` */;
 /*!50003 SET @saved_cs_client      = @@character_set_client */ ;
 /*!50003 SET @saved_cs_results     = @@character_set_results */ ;
@@ -662,6 +684,27 @@ DELIMITER ;
 /*!50003 SET character_set_client  = @saved_cs_client */ ;
 /*!50003 SET character_set_results = @saved_cs_results */ ;
 /*!50003 SET collation_connection  = @saved_col_connection */ ;
+/*!50003 DROP PROCEDURE IF EXISTS `place_order` */;
+/*!50003 SET @saved_cs_client      = @@character_set_client */ ;
+/*!50003 SET @saved_cs_results     = @@character_set_results */ ;
+/*!50003 SET @saved_col_connection = @@collation_connection */ ;
+/*!50003 SET character_set_client  = utf8mb4 */ ;
+/*!50003 SET character_set_results = utf8mb4 */ ;
+/*!50003 SET collation_connection  = utf8mb4_0900_ai_ci */ ;
+/*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
+/*!50003 SET sql_mode              = 'STRICT_TRANS_TABLES,NO_ENGINE_SUBSTITUTION' */ ;
+DELIMITER ;;
+CREATE DEFINER=`root`@`localhost` PROCEDURE `place_order`(in id int, in product int, in card_num char(16), in card_type varchar(20), in amount int)
+BEGIN
+insert into orders(orderdate, shipdate, payment_type, CCN)
+values (curdate(), date_add(curdate(), interval 3 day), card_type, card_num, id);
+call insert_into_contains(product, amount, id);
+END ;;
+DELIMITER ;
+/*!50003 SET sql_mode              = @saved_sql_mode */ ;
+/*!50003 SET character_set_client  = @saved_cs_client */ ;
+/*!50003 SET character_set_results = @saved_cs_results */ ;
+/*!50003 SET collation_connection  = @saved_col_connection */ ;
 /*!50003 DROP PROCEDURE IF EXISTS `rate_product` */;
 /*!50003 SET @saved_cs_client      = @@character_set_client */ ;
 /*!50003 SET @saved_cs_results     = @@character_set_results */ ;
@@ -676,6 +719,51 @@ CREATE DEFINER=`root`@`localhost` PROCEDURE `rate_product`(in id int, in pid int
 BEGIN
 insert into rated(customerID, UPC, rating, ratingdate)
 values (id, pid, rate, curdate());
+END ;;
+DELIMITER ;
+/*!50003 SET sql_mode              = @saved_sql_mode */ ;
+/*!50003 SET character_set_client  = @saved_cs_client */ ;
+/*!50003 SET character_set_results = @saved_cs_results */ ;
+/*!50003 SET collation_connection  = @saved_col_connection */ ;
+/*!50003 DROP PROCEDURE IF EXISTS `recommend_a_product` */;
+/*!50003 SET @saved_cs_client      = @@character_set_client */ ;
+/*!50003 SET @saved_cs_results     = @@character_set_results */ ;
+/*!50003 SET @saved_col_connection = @@collation_connection */ ;
+/*!50003 SET character_set_client  = utf8mb4 */ ;
+/*!50003 SET character_set_results = utf8mb4 */ ;
+/*!50003 SET collation_connection  = utf8mb4_0900_ai_ci */ ;
+/*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
+/*!50003 SET sql_mode              = 'STRICT_TRANS_TABLES,NO_ENGINE_SUBSTITUTION' */ ;
+DELIMITER ;;
+CREATE DEFINER=`root`@`localhost` PROCEDURE `recommend_a_product`(in id int)
+BEGIN
+declare most_bought_category varchar(20);
+declare most_wished_category varchar(20);
+set most_bought_category = (select category
+							from product join prod_category using (UPC)
+							where (UPC, category) in (select UPC,category 
+														from prod_category as p
+														where p.UPC in (select c.UPC
+																		from contains as c
+																		where c.orderID in (select o.orderID
+																							from orders as o
+																							where o.customerID = id)))
+							group by category
+							order by amount desc limit 1);
+set most_wished_category = (select category
+							from product join prod_category using (UPC)
+							where (UPC, category) in (select UPC,category 
+														from prod_category as p
+														where p.UPC in (select w.UPC
+																		from wishes as w
+																		where w.customerID = id))
+							group by category
+							order by amount desc limit 1);
+select UPC, Pname
+from product
+where UPC in (select UPC
+				from prod_category
+                where category = most_bought_category or category = most_wished_category);
 END ;;
 DELIMITER ;
 /*!50003 SET sql_mode              = @saved_sql_mode */ ;
@@ -786,6 +874,27 @@ select UPC, Pname, price, count(UPC) as amount
 from wishes join product using (UPC)
 group by UPC
 order by amount desc;
+END ;;
+DELIMITER ;
+/*!50003 SET sql_mode              = @saved_sql_mode */ ;
+/*!50003 SET character_set_client  = @saved_cs_client */ ;
+/*!50003 SET character_set_results = @saved_cs_results */ ;
+/*!50003 SET collation_connection  = @saved_col_connection */ ;
+/*!50003 DROP PROCEDURE IF EXISTS `track_order` */;
+/*!50003 SET @saved_cs_client      = @@character_set_client */ ;
+/*!50003 SET @saved_cs_results     = @@character_set_results */ ;
+/*!50003 SET @saved_col_connection = @@collation_connection */ ;
+/*!50003 SET character_set_client  = utf8mb4 */ ;
+/*!50003 SET character_set_results = utf8mb4 */ ;
+/*!50003 SET collation_connection  = utf8mb4_0900_ai_ci */ ;
+/*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
+/*!50003 SET sql_mode              = 'STRICT_TRANS_TABLES,NO_ENGINE_SUBSTITUTION' */ ;
+DELIMITER ;;
+CREATE DEFINER=`root`@`localhost` PROCEDURE `track_order`(in id int)
+BEGIN
+select *
+from orders join contains using (orderID)
+where customerID = id;
 END ;;
 DELIMITER ;
 /*!50003 SET sql_mode              = @saved_sql_mode */ ;
@@ -941,4 +1050,4 @@ DELIMITER ;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2020-04-27 15:17:35
+-- Dump completed on 2020-04-27 21:11:50

@@ -1,7 +1,11 @@
 import React, { Component } from 'react';
 import axios from "axios";
 import Navigation from "../components/Navigation";
-import { Carousel, CarouselCaption, CarouselItem } from 'reactstrap';
+import { UncontrolledCarousel, CarouselCaption, CarouselItem, Row, Col,
+    FormGroup, Label, FormText, Input, Button, Container } from 'reactstrap';
+import StarRatings from "../components/StarRating";
+import StarRating from "../components/StarRating";
+import DemoFooter from "../components/Footers/DemoFooter";
 
 class SingleProductPage extends Component{
     constructor(props) {
@@ -12,7 +16,9 @@ class SingleProductPage extends Component{
             price: '',
             rating: '',
             amount: '',
-            images: []
+            image1: '',
+            image2: '',
+            image3: ''
         }
     }
 
@@ -24,7 +30,7 @@ class SingleProductPage extends Component{
         await this.setState({price: data.price})
         await this.setState({rating: data.rating})
         await this.setState({amount: data.amount})
-        this.getPic();
+        await this.getPic();
     }
 
     async getPic(){
@@ -34,21 +40,32 @@ class SingleProductPage extends Component{
                 Authorization: 'Client-ID dtaTz_Cge-6eCOjxaNcyFR-H4-nX9fcSzkZfx8B6LfA'
             }
         });
-        this.setState({images: response.data.results});
-        console.log(this.state.images)
+        this.setState({image1: response.data.results[7].urls.regular}) ;
+        this.setState({image2: response.data.results[8].urls.regular}) ;
+        this.setState({image3: response.data.results[9].urls.regular}) ;
     }
 
 
 
     render(){
-        const slides = this.state.images.map((pic) => {
-        return (
-            <CarouselItem key={pic.urls.regular}>
-                <img src={pic.urls.regular} alt={pic.alt_descrption} />
-                <CarouselCaption captionText={pic.description} captionHeader={pic.description} />
-            </CarouselItem>
-        );
-    });
+
+        const carouselItems = [
+            {
+                src: this.state.image1,
+                altText: "Slide 1",
+                caption: ""
+            },
+            {
+                src: this.state.image2,
+                altText: "Slide 2",
+                caption: ""
+            },
+            {
+                src: this.state.image3,
+                altText: "Slide 3",
+                caption: ""
+            }
+        ];
         return(
             <div>
                 <Navigation/>
@@ -56,6 +73,61 @@ class SingleProductPage extends Component{
                 <br/>
                 <br/>
                 <br/>
+                <br/>
+                <br/>
+                <br/>
+                <Container>
+                    <Row>
+                        <Col>
+                            <UncontrolledCarousel items={carouselItems} />
+                        </Col>
+                        <Col>
+                            <h2 style={{paddingBottom: '5px'}}>{this.state.Pname}</h2>
+                            <div>
+                                <Col>
+                                    <StarRating rating={this.state.rating} amount={this.state.amount} name={this.state.name}/>
+                                </Col>
+                            </div>
+                            <hr/>
+                                <h3>${this.state.price}</h3>
+                            <hr/>
+                            <Button color="primary" type="submit">
+                                Buy Now
+                            </Button>
+                        </Col>
+                    </Row>
+                </Container>
+                <br/>
+                <br/>
+                <br/>
+                <br/>
+                <br/>
+                <br/>
+                <br/>
+                <br/>
+                <br/>
+                <br/>
+                <br/>
+                <br/>
+                <br/>
+                <br/>
+                <br/>
+                <br/>
+                <br/>
+                <br/>
+                <br/>
+                <br/>
+                <br/>
+                <br/>
+                <br/>
+                <br/>
+                <br/>
+                <br/>
+                <br/>
+                <br/>
+                <br/>
+                <br/>
+                <DemoFooter />
             </div>
         );
     }
