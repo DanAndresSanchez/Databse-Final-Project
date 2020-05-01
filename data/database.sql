@@ -6,6 +6,7 @@
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
 /*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
 /*!50503 SET NAMES utf8 */;
 /*!40103 SET @OLD_TIME_ZONE=@@TIME_ZONE */;
@@ -59,7 +60,7 @@ CREATE TABLE `customer` (
   `cstate` char(2) DEFAULT NULL,
   `czip` char(5) DEFAULT NULL,
   PRIMARY KEY (`customerID`)
-) ENGINE=InnoDB AUTO_INCREMENT=61 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=62 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -68,7 +69,7 @@ CREATE TABLE `customer` (
 
 LOCK TABLES `customer` WRITE;
 /*!40000 ALTER TABLE `customer` DISABLE KEYS */;
-INSERT INTO `customer` VALUES (1,'Allene','Iturbide','1 Central Ave','Portage','WI','54481'),(2,'Marino','Lueckenbach','1 Century Park E','San Diego','CA','92110'),(3,'Twana','Felger','1 Commerce Way','Washington','OR','97224'),(4,'Salena','Karpel','1 Garfield Ave #7','Stark','OH','44707'),(5,'Arminda','Parvis','1 Huntwood Ave','Maricopa','AZ','85017'),(6,'Nicolette','Brossart','1 Midway Rd','Worcester','MA','15281'),(7,'Joanne','Mathieu','1 N Harlem Ave #9','Essex','NJ','70503'),(8,'Jacque','Rowling','1 N San Saba','Erie','PA','16501'),(9,'Hermin','Thyberg','1 Rancho Del Mar Shopping C','Providence','RI','29103'),(10,'Johann','Leinenbach','1 Washington St','Palm Beach','FL','33461'),(11,'Roxane','Campain','1048 Main St','Fairbanks North Star','AK','99708'),(12,'Clorinda','Heimann','105 Richmond Valley Rd','San Diego','CA','92025'),(13,'Regis','Kannady','10759 Main St','Maricopa','AZ','85260'),(14,'John','Abdallah','1088 Pinehurst St','Orange','NC','27514'),(15,'Arlette','Honeywell','11279 Loytan St','Duval','FL','32254'),(16,'Aliza','Baltimore','1128 Delaware St','Santa Clara','CA','95132'),(17,'Carissa','Batman','12270 Caton Center Dr','Lane','OR','97401'),(18,'Manny','Kohnert','134 Lewis Rd','Davidson','TN','37211'),(19,'Amber','Monarrez','14288 Foster Ave #4121','Montgomery','PA','19046'),(20,'Dean','Juhas','14302 Pennsylvania Ave','Montgomery','PA','19006'),(21,'Jolene','Ostolaza','1610 14th St Nw','Newport News City','VA','23608'),(22,'Rozella','Ostrosky','17 Morena Blvd','Ventura','CA','93012'),(23,'Cyndy','Goldammer','170 Wyoming Ave','Dakota','MN','55337'),(24,'Angello','Cetta','185 Blackstone Bldge','Honolulu','HI','96817'),(25,'Paris','Wide','187 Market St','Fulton','GA','30342'),(26,'Jean','Claucherty','19 Amboy Ave','Miami-Dade','FL','33142'),(27,'Merlin','Bayless','195 13n N','Santa Clara','CA','95054'),(28,'Diane','Devreese','1953 Telegraph Rd','Buchanan','MO','64504'),(29,'Fatima','Saylors','2 Lighthouse Ave','Hennepin','MN','55343'),(30,'Kaitlyn','Ogg','2 S Biscayne Blvd','Baltimore City','MD','21230'),(31,'Sunny','Kownacki','2 Se 3rd Ave','Dallas','TX','75149'),(32,'Ray','Kampa','2 Sw Nyberg Rd','Elkhart','IN','46514'),(33,'Lili','Paskin','20113 4th Ave E','Hudson','NJ','71032'),(34,'Rebecka','Gesick','2026 N Plankinton Ave #3','Travis','TX','78754'),(35,'Micael','Rhymes','20932 Hedley St','Contra Costa','CA','94520'),(36,'Colette','Kardas','21575 S Apple Creek Rd','Douglas','NE','68124'),(37,'Refugia','Jacobos','2184 Worth St','Alameda','CA','94545'),(38,'Tresa','Sweely','22 Bridle Ln','Saint Louis','MO','63088'),(39,'Jesusa','Shin','2239 Shawnee Mission Pky','Coffee','TN','37388'),(40,'Layla','Springe','229 N Forty Driv','New York','NY','10011'),(41,'Sheldon','Zane','2409 Alabama Rd','Riverside','CA','92501'),(42,'Kiley','Caldarera','25 E 75th St #69','Los Angeles','CA','90034'),(43,'Luis','Jurney','25 Se 176th Pl','Middlesex','MA','82138'),(44,'Rasheed','Sayaphon','251 Park Ave #979','Santa Clara','CA','95070'),(45,'Renea','Monterrubio','26 Montgomery St','Fulton','GA','30328'),(46,'Carmelo','Lindall','2664 Lewis Rd','Douglas','CO','80126'),(47,'Linn','Paa','1 S Pine St','Shelby','TN','38112'),(48,'Yuki','Whobrey','1 State Route 27','Wayne','MI','48180'),(49,'Trinidad','Mcrae','10276 Brooks St','San Francisco','CA','94105'),(50,'Daniel','Perruzza','11360 S Halsted St','Orange','CA','92705'),(57,'Melissa','Beach','685 Ocean Ave','Cape Map','NJ','08204'),(58,'Diana','Vintage','222 Desk Road','Supourus','WI','16242'),(59,'Ginger','Seaseme','69 Plantation Road','HoldOn','KS','76842'),(60,'Dan','Sanchez','59 Road Ave','Columbia','NJ','93827');
+INSERT INTO `customer` VALUES (1,'Allene','Iturbide','1 Central Ave','Portage','WI','54481'),(2,'Marino','Lueckenbach','1 Century Park E','San Diego','CA','92110'),(3,'Twana','Felger','1 Commerce Way','Washington','OR','97224'),(4,'Salena','Karpel','1 Garfield Ave #7','Stark','OH','44707'),(5,'Arminda','Parvis','1 Huntwood Ave','Maricopa','AZ','85017'),(6,'Nicolette','Brossart','1 Midway Rd','Worcester','MA','15281'),(7,'Joanne','Mathieu','1 N Harlem Ave #9','Essex','NJ','70503'),(8,'Jacque','Rowling','1 N San Saba','Erie','PA','16501'),(9,'Hermin','Thyberg','1 Rancho Del Mar Shopping C','Providence','RI','29103'),(10,'Johann','Leinenbach','1 Washington St','Palm Beach','FL','33461'),(11,'Roxane','Campain','1048 Main St','Fairbanks North Star','AK','99708'),(12,'Clorinda','Heimann','105 Richmond Valley Rd','San Diego','CA','92025'),(13,'Regis','Kannady','10759 Main St','Maricopa','AZ','85260'),(14,'John','Abdallah','1088 Pinehurst St','Orange','NC','27514'),(15,'Arlette','Honeywell','11279 Loytan St','Duval','FL','32254'),(16,'Aliza','Baltimore','1128 Delaware St','Santa Clara','CA','95132'),(17,'Carissa','Batman','12270 Caton Center Dr','Lane','OR','97401'),(18,'Manny','Kohnert','134 Lewis Rd','Davidson','TN','37211'),(19,'Amber','Monarrez','14288 Foster Ave #4121','Montgomery','PA','19046'),(20,'Dean','Juhas','14302 Pennsylvania Ave','Montgomery','PA','19006'),(21,'Jolene','Ostolaza','1610 14th St Nw','Newport News City','VA','23608'),(22,'Rozella','Ostrosky','17 Morena Blvd','Ventura','CA','93012'),(23,'Cyndy','Goldammer','170 Wyoming Ave','Dakota','MN','55337'),(24,'Angello','Cetta','185 Blackstone Bldge','Honolulu','HI','96817'),(25,'Paris','Wide','187 Market St','Fulton','GA','30342'),(26,'Jean','Claucherty','19 Amboy Ave','Miami-Dade','FL','33142'),(27,'Merlin','Bayless','195 13n N','Santa Clara','CA','95054'),(28,'Diane','Devreese','1953 Telegraph Rd','Buchanan','MO','64504'),(29,'Fatima','Saylors','2 Lighthouse Ave','Hennepin','MN','55343'),(30,'Kaitlyn','Ogg','2 S Biscayne Blvd','Baltimore City','MD','21230'),(31,'Sunny','Kownacki','2 Se 3rd Ave','Dallas','TX','75149'),(32,'Ray','Kampa','2 Sw Nyberg Rd','Elkhart','IN','46514'),(33,'Lili','Paskin','20113 4th Ave E','Hudson','NJ','71032'),(34,'Rebecka','Gesick','2026 N Plankinton Ave #3','Travis','TX','78754'),(35,'Micael','Rhymes','20932 Hedley St','Contra Costa','CA','94520'),(36,'Colette','Kardas','21575 S Apple Creek Rd','Douglas','NE','68124'),(37,'Refugia','Jacobos','2184 Worth St','Alameda','CA','94545'),(38,'Tresa','Sweely','22 Bridle Ln','Saint Louis','MO','63088'),(39,'Jesusa','Shin','2239 Shawnee Mission Pky','Coffee','TN','37388'),(40,'Layla','Springe','229 N Forty Driv','New York','NY','10011'),(41,'Sheldon','Zane','2409 Alabama Rd','Riverside','CA','92501'),(42,'Kiley','Caldarera','25 E 75th St #69','Los Angeles','CA','90034'),(43,'Luis','Jurney','25 Se 176th Pl','Middlesex','MA','82138'),(44,'Rasheed','Sayaphon','251 Park Ave #979','Santa Clara','CA','95070'),(45,'Renea','Monterrubio','26 Montgomery St','Fulton','GA','30328'),(46,'Carmelo','Lindall','2664 Lewis Rd','Douglas','CO','80126'),(47,'Linn','Paa','1 S Pine St','Shelby','TN','38112'),(48,'Yuki','Whobrey','1 State Route 27','Wayne','MI','48180'),(49,'Trinidad','Mcrae','10276 Brooks St','San Francisco','CA','94105'),(50,'Daniel','Perruzza','11360 S Halsted St','Orange','CA','92705'),(57,'Melissa','Beach','685 Ocean Ave','Cape Map','NJ','08204'),(58,'Diana','Vintage','222 Desk Road','Supourus','WI','16242'),(59,'Ginger','Seaseme','69 Plantation Road','HoldOn','KS','76842'),(60,'Dan','Sanchez','59 Road Ave','Columbia','NJ','93827'),(61,'Family','Family','123 Family Roaf','Kin','NJ','20342');
 /*!40000 ALTER TABLE `customer` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -305,7 +306,7 @@ UNLOCK TABLES;
 /*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
 /*!50003 SET sql_mode              = 'STRICT_TRANS_TABLES,NO_ENGINE_SUBSTITUTION' */ ;
 DELIMITER ;;
-CREATE DEFINER=`root`@`localhost` PROCEDURE `add_customer`(
+CREATE PROCEDURE `add_customer`(
 	in fname varchar(20),
     in lname varchar(30),
     in address varchar(100),
@@ -331,7 +332,7 @@ DELIMITER ;
 /*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
 /*!50003 SET sql_mode              = 'STRICT_TRANS_TABLES,NO_ENGINE_SUBSTITUTION' */ ;
 DELIMITER ;;
-CREATE DEFINER=`root`@`localhost` PROCEDURE `add_product`(
+CREATE PROCEDURE `add_product`(
 in name varchar(40), in price decimal(10.2), in Sname varchar(30), amount int, reorderlevel int
 )
 BEGIN
@@ -353,7 +354,7 @@ DELIMITER ;
 /*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
 /*!50003 SET sql_mode              = 'STRICT_TRANS_TABLES,NO_ENGINE_SUBSTITUTION' */ ;
 DELIMITER ;;
-CREATE DEFINER=`root`@`localhost` PROCEDURE `add_supplier`(
+CREATE  PROCEDURE `add_supplier`(
 in name varchar(30), city varchar(20), zip char(5))
 BEGIN
 	insert into supplier(Sname, scity, szip)
@@ -374,7 +375,7 @@ DELIMITER ;
 /*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
 /*!50003 SET sql_mode              = 'NO_AUTO_VALUE_ON_ZERO' */ ;
 DELIMITER ;;
-CREATE DEFINER=`root`@`localhost` PROCEDURE `add_to_wishlist`(in id int, in pid int)
+CREATE  PROCEDURE `add_to_wishlist`(in id int, in pid int)
 BEGIN
 insert into wishes(customerID, UPC) 
 values (id, pid);
@@ -394,7 +395,7 @@ DELIMITER ;
 /*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
 /*!50003 SET sql_mode              = 'STRICT_TRANS_TABLES,NO_ENGINE_SUBSTITUTION' */ ;
 DELIMITER ;;
-CREATE DEFINER=`root`@`localhost` PROCEDURE `bad_selling_product`(in months int)
+CREATE  PROCEDURE `bad_selling_product`(in months int)
 BEGIN
 with a as (select UPC, sum(quantity) as total_sold
 			from contains
@@ -422,7 +423,7 @@ DELIMITER ;
 /*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
 /*!50003 SET sql_mode              = 'NO_AUTO_VALUE_ON_ZERO' */ ;
 DELIMITER ;;
-CREATE DEFINER=`root`@`localhost` PROCEDURE `delete_prod_wish`(in id int, in pid int)
+CREATE  PROCEDURE `delete_prod_wish`(in id int, in pid int)
 BEGIN
 delete from wishes
 where customerID = id and UPC = pid;
@@ -442,7 +443,7 @@ DELIMITER ;
 /*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
 /*!50003 SET sql_mode              = 'STRICT_TRANS_TABLES,NO_ENGINE_SUBSTITUTION' */ ;
 DELIMITER ;;
-CREATE DEFINER=`root`@`localhost` PROCEDURE `get_all_products`()
+CREATE  PROCEDURE `get_all_products`()
 BEGIN
 select UPC, Pname, price, avg(rating) as rating, count(rating) as amount
 from rated join product using (UPC)
@@ -464,7 +465,7 @@ DELIMITER ;
 /*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
 /*!50003 SET sql_mode              = 'STRICT_TRANS_TABLES,NO_ENGINE_SUBSTITUTION' */ ;
 DELIMITER ;;
-CREATE DEFINER=`root`@`localhost` PROCEDURE `get_best_ratings`()
+CREATE  PROCEDURE `get_best_ratings`()
 BEGIN
 select Pname as product, avg(rating) as rating, count(rating) as amount
 from rated join product using (UPC)
@@ -486,7 +487,7 @@ DELIMITER ;
 /*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
 /*!50003 SET sql_mode              = 'STRICT_TRANS_TABLES,NO_ENGINE_SUBSTITUTION' */ ;
 DELIMITER ;;
-CREATE DEFINER=`root`@`localhost` PROCEDURE `get_product_alphabetical`()
+CREATE  PROCEDURE `get_product_alphabetical`()
 BEGIN
 select Pname as product, price, avg(rating) as rating, count(rating) as amount
 from rated join product using (UPC)
@@ -508,7 +509,7 @@ DELIMITER ;
 /*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
 /*!50003 SET sql_mode              = 'STRICT_TRANS_TABLES,NO_ENGINE_SUBSTITUTION' */ ;
 DELIMITER ;;
-CREATE DEFINER=`root`@`localhost` PROCEDURE `get_product_ralphabetical`()
+CREATE  PROCEDURE `get_product_ralphabetical`()
 BEGIN
 select Pname as product, price, avg(rating) as rating, count(rating) as amount
 from rated join product using (UPC)
@@ -530,7 +531,7 @@ DELIMITER ;
 /*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
 /*!50003 SET sql_mode              = 'STRICT_TRANS_TABLES,NO_ENGINE_SUBSTITUTION' */ ;
 DELIMITER ;;
-CREATE DEFINER=`root`@`localhost` PROCEDURE `get_worst_ratings`()
+CREATE  PROCEDURE `get_worst_ratings`()
 BEGIN
 select Pname as product, avg(rating) as rating, count(rating) as amount
 from rated join product using (UPC)
@@ -552,7 +553,7 @@ DELIMITER ;
 /*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
 /*!50003 SET sql_mode              = 'STRICT_TRANS_TABLES,NO_ENGINE_SUBSTITUTION' */ ;
 DELIMITER ;;
-CREATE DEFINER=`root`@`localhost` PROCEDURE `insert_to_contains`( in product int, in amount tinyint, in id int )
+CREATE  PROCEDURE `insert_to_contains`( in product int, in amount tinyint, in id int )
 BEGIN
 declare most_recent int default (select max(orderID) from orders where customerID = id);
 insert into contains(orderID, UPC, quantity) values (most_recent, product, amount);
@@ -572,7 +573,7 @@ DELIMITER ;
 /*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
 /*!50003 SET sql_mode              = 'NO_AUTO_VALUE_ON_ZERO' */ ;
 DELIMITER ;;
-CREATE DEFINER=`root`@`localhost` PROCEDURE `need_reorder`()
+CREATE  PROCEDURE `need_reorder`()
 BEGIN
 select UPC
 from product 
@@ -593,7 +594,7 @@ DELIMITER ;
 /*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
 /*!50003 SET sql_mode              = 'STRICT_TRANS_TABLES,NO_ENGINE_SUBSTITUTION' */ ;
 DELIMITER ;;
-CREATE DEFINER=`root`@`localhost` PROCEDURE `nonactive_customers`(in months int)
+CREATE  PROCEDURE `nonactive_customers`(in months int)
 BEGIN
 select customerID, Fname, Lname
 from customer as o
@@ -620,7 +621,7 @@ DELIMITER ;
 /*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
 /*!50003 SET sql_mode              = 'STRICT_TRANS_TABLES,NO_ENGINE_SUBSTITUTION' */ ;
 DELIMITER ;;
-CREATE DEFINER=`root`@`localhost` PROCEDURE `nonbought_wished`()
+CREATE  PROCEDURE `nonbought_wished`()
 BEGIN
 select customerID, Fname, Lname, UPC
 from customer as c join wishes as w using (customerID)
@@ -644,7 +645,7 @@ DELIMITER ;
 /*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
 /*!50003 SET sql_mode              = 'STRICT_TRANS_TABLES,NO_ENGINE_SUBSTITUTION' */ ;
 DELIMITER ;;
-CREATE DEFINER=`root`@`localhost` PROCEDURE `nonrated_products`()
+CREATE  PROCEDURE `nonrated_products`()
 BEGIN
 select customerID, Fname, Lname, UPC
 from customer as c join rated as r using (customerID)
@@ -668,7 +669,7 @@ DELIMITER ;
 /*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
 /*!50003 SET sql_mode              = 'STRICT_TRANS_TABLES,NO_ENGINE_SUBSTITUTION' */ ;
 DELIMITER ;;
-CREATE DEFINER=`root`@`localhost` PROCEDURE `nonverified_purchase`()
+CREATE  PROCEDURE `nonverified_purchase`()
 BEGIN
 select customerID, Fname, Lname, UPC
 from customer as c join rated as r using (customerID)
@@ -694,7 +695,7 @@ DELIMITER ;
 /*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
 /*!50003 SET sql_mode              = 'STRICT_TRANS_TABLES,NO_ENGINE_SUBSTITUTION' */ ;
 DELIMITER ;;
-CREATE DEFINER=`root`@`localhost` PROCEDURE `place_order`(in id int, in product int, in card_num char(16), in card_type varchar(20), in amount int)
+CREATE  PROCEDURE `place_order`(in id int, in product int, in card_num char(16), in card_type varchar(20), in amount int)
 BEGIN
 insert into orders(orderdate, shipdate, payment_type, CCN)
 values (curdate(), date_add(curdate(), interval 3 day), card_type, card_num, id);
@@ -715,7 +716,7 @@ DELIMITER ;
 /*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
 /*!50003 SET sql_mode              = 'NO_AUTO_VALUE_ON_ZERO' */ ;
 DELIMITER ;;
-CREATE DEFINER=`root`@`localhost` PROCEDURE `rate_product`(in id int, in pid int, rate tinyint)
+CREATE  PROCEDURE `rate_product`(in id int, in pid int, rate tinyint)
 BEGIN
 insert into rated(customerID, UPC, rating, ratingdate)
 values (id, pid, rate, curdate());
@@ -735,7 +736,7 @@ DELIMITER ;
 /*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
 /*!50003 SET sql_mode              = 'STRICT_TRANS_TABLES,NO_ENGINE_SUBSTITUTION' */ ;
 DELIMITER ;;
-CREATE DEFINER=`root`@`localhost` PROCEDURE `recommend_a_product`(in id int)
+CREATE  PROCEDURE `recommend_a_product`(in id int)
 BEGIN
 declare most_bought_category varchar(20);
 declare most_wished_category varchar(20);
@@ -780,7 +781,7 @@ DELIMITER ;
 /*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
 /*!50003 SET sql_mode              = 'STRICT_TRANS_TABLES,NO_ENGINE_SUBSTITUTION' */ ;
 DELIMITER ;;
-CREATE DEFINER=`root`@`localhost` PROCEDURE `remove product`(
+CREATE  PROCEDURE `remove product`(
 in id int
 )
 BEGIN
@@ -802,7 +803,7 @@ DELIMITER ;
 /*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
 /*!50003 SET sql_mode              = 'STRICT_TRANS_TABLES,NO_ENGINE_SUBSTITUTION' */ ;
 DELIMITER ;;
-CREATE DEFINER=`root`@`localhost` PROCEDURE `remove_customer`(
+CREATE  PROCEDURE `remove_customer`(
 in id int
 )
 BEGIN
@@ -824,7 +825,7 @@ DELIMITER ;
 /*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
 /*!50003 SET sql_mode              = 'STRICT_TRANS_TABLES,NO_ENGINE_SUBSTITUTION' */ ;
 DELIMITER ;;
-CREATE DEFINER=`root`@`localhost` PROCEDURE `remove_supplier`(
+CREATE  PROCEDURE `remove_supplier`(
 in name varchar(40)
 )
 BEGIN
@@ -846,7 +847,7 @@ DELIMITER ;
 /*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
 /*!50003 SET sql_mode              = 'STRICT_TRANS_TABLES,NO_ENGINE_SUBSTITUTION' */ ;
 DELIMITER ;;
-CREATE DEFINER=`root`@`localhost` PROCEDURE `top_products`()
+CREATE  PROCEDURE `top_products`()
 BEGIN
 select UPC, Pname, price, avg(rating) as rating, count(rating) as amount
 from rated join product using (UPC)
@@ -868,7 +869,7 @@ DELIMITER ;
 /*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
 /*!50003 SET sql_mode              = 'STRICT_TRANS_TABLES,NO_ENGINE_SUBSTITUTION' */ ;
 DELIMITER ;;
-CREATE DEFINER=`root`@`localhost` PROCEDURE `top_wiished`()
+CREATE  PROCEDURE `top_wiished`()
 BEGIN
 select UPC, Pname, price, count(UPC) as amount
 from wishes join product using (UPC)
@@ -890,7 +891,7 @@ DELIMITER ;
 /*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
 /*!50003 SET sql_mode              = 'STRICT_TRANS_TABLES,NO_ENGINE_SUBSTITUTION' */ ;
 DELIMITER ;;
-CREATE DEFINER=`root`@`localhost` PROCEDURE `track_order`(in id int)
+CREATE  PROCEDURE `track_order`(in id int)
 BEGIN
 select *
 from orders join contains using (orderID)
@@ -911,7 +912,7 @@ DELIMITER ;
 /*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
 /*!50003 SET sql_mode              = 'STRICT_TRANS_TABLES,NO_ENGINE_SUBSTITUTION' */ ;
 DELIMITER ;;
-CREATE DEFINER=`root`@`localhost` PROCEDURE `view_customer`(
+CREATE  PROCEDURE `view_customer`(
 in id int
 )
 BEGIN
@@ -934,7 +935,7 @@ DELIMITER ;
 /*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
 /*!50003 SET sql_mode              = 'STRICT_TRANS_TABLES,NO_ENGINE_SUBSTITUTION' */ ;
 DELIMITER ;;
-CREATE DEFINER=`root`@`localhost` PROCEDURE `view_nonbought_wish`()
+CREATE  PROCEDURE `view_nonbought_wish`()
 BEGIN
 select UPC, Pname , customerID, Fname, Lname
 from wishes join customer using (customerID) join product using (UPC)
@@ -957,7 +958,7 @@ DELIMITER ;
 /*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
 /*!50003 SET sql_mode              = 'STRICT_TRANS_TABLES,NO_ENGINE_SUBSTITUTION' */ ;
 DELIMITER ;;
-CREATE DEFINER=`root`@`localhost` PROCEDURE `view_product`(
+CREATE  PROCEDURE `view_product`(
 in id int
 )
 BEGIN
@@ -980,7 +981,7 @@ DELIMITER ;
 /*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
 /*!50003 SET sql_mode              = 'STRICT_TRANS_TABLES,NO_ENGINE_SUBSTITUTION' */ ;
 DELIMITER ;;
-CREATE DEFINER=`root`@`localhost` PROCEDURE `view_supplier`(
+CREATE  PROCEDURE `view_supplier`(
 in name varchar(40)
 )
 BEGIN
@@ -1003,7 +1004,7 @@ DELIMITER ;
 /*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
 /*!50003 SET sql_mode              = 'NO_AUTO_VALUE_ON_ZERO' */ ;
 DELIMITER ;;
-CREATE DEFINER=`root`@`localhost` PROCEDURE `view_wishlist`( in id int)
+CREATE  PROCEDURE `view_wishlist`( in id int)
 BEGIN
 select *
 from wishes
@@ -1024,7 +1025,7 @@ DELIMITER ;
 /*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
 /*!50003 SET sql_mode              = 'STRICT_TRANS_TABLES,NO_ENGINE_SUBSTITUTION' */ ;
 DELIMITER ;;
-CREATE DEFINER=`root`@`localhost` PROCEDURE `view_wishlist_customer`(
+CREATE  PROCEDURE `view_wishlist_customer`(
 	in id int
 )
 BEGIN
@@ -1050,4 +1051,4 @@ DELIMITER ;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2020-04-27 21:11:50
+-- Dump completed on 2020-04-28  2:10:58
